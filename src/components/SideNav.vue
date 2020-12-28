@@ -1,6 +1,7 @@
 <template>
+<v-container>
   <v-sheet
-    height="400"
+    height="800"
     class="overflow-hidden"
     style="position: relative;"
   >
@@ -40,6 +41,7 @@
       </v-list>
     </v-navigation-drawer>
   </v-sheet>
+  </v-container>
 </template>
 
 <script>

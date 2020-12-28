@@ -1,14 +1,11 @@
 <template>
-  <v-card class="overflow-hidden">
+<v-app>
     <v-app-bar
       absolute
       color="#6A76AB"
       dark
-      shrink-on-scroll
-      prominent
+      app
       src="https://picsum.photos/1920/1080?random"
-      fade-img-on-scroll
-      scroll-target="#scrolling-techniques-4"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -25,37 +22,30 @@
       <v-spacer></v-spacer>
 
       <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
+        <v-icon 
+        x-large
+        color="blue"
+        >mdi-twitter</v-icon>
       </v-btn>
 
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
+          
+      <v-btn icon >
+        <v-icon x-large>mdi-instagram</v-icon>
       </v-btn>
 
-      <v-menu
-        bottom
-        left
-      >
+      <v-menu>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             icon
             color="yellow"
             v-bind="attrs"
             v-on="on"
-          >
-            <v-icon>mdi-dots-vertical</v-icon>
+            >
+            <v-icon x-large>mdi-github</v-icon>
           </v-btn>
         </template>
-
-        <v-list>
-          <v-list-item
-            v-for="(item, i) in items"
-            :key="i"
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
       </v-menu>
+      
       <template v-slot:extension>
         <v-tabs align-with-title>
           <v-tab>HOME</v-tab>
@@ -65,17 +55,15 @@
       </template>
     </v-app-bar>
     <SideNav />
-    <v-sheet
-      id="scrolling-techniques-4"
-      class="overflow-y-auto"
-      max-height="1500"
-    >
+
+    <v-main>
 <router-view></router-view>
+    </v-main>
+
 <router-link to="/">Home</router-link>
 <router-link to="/about">About</router-link>
-      <v-container style="height: 1500px;"></v-container>
-    </v-sheet>
-  </v-card>
+
+  </v-app>
 </template>
 
 <script>
@@ -89,10 +77,10 @@ export default {
   data () {
     return {
       items: [
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me 2' },
+        { title: '' },
+        { title: '' },
+        { title: '' },
+        { title: '' },
       ],
     }
   },
